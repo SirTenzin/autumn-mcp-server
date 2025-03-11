@@ -30,8 +30,9 @@ This is an unofficial MCP server for [Autumn](https://useautumn.com). It provide
 ## Usage
 
 1. `git clone` this repo
-2. Copy the absolute path to "index.ts"
-3. Add the following to your claude_desktop_config.json or equivalent to your AI app:
+2. Run `bun install` in the folder to install dependencies
+3. Copy the absolute path to "index.ts"
+4. Add the following to your claude_desktop_config.json or equivalent to your AI app:
 
 ```json
 {
@@ -61,4 +62,4 @@ You may use either your public or secret key, but some features may not be acces
 
 ![Claude finding an invoice](https://i.imgur.com/z41HOwH.png)
 
-![Claude creating a billing portal](https://i.imgur.com/vjn3c2J.png)
+![Claude creating a billing portal](https://i.imgur.com/gbzuWpR.png)
