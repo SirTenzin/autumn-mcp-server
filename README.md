@@ -47,9 +47,9 @@ This is an unofficial MCP server for [Autumn](https://useautumn.com). It provide
 		}
 	}
 }
-
-// or other apps that use commands:
-
+```
+Or other apps that use commands instead:
+```bash
 bun run {absolute path to index.ts} --apiKey="{your api key}"
 ```
 
