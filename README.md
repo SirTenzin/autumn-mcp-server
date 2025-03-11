@@ -25,6 +25,9 @@ This is an unofficial MCP server for [Autumn](https://useautumn.com). It provide
 - [ ] AI Builder Prompt (Lovable, Bolt.new, v0 etc...)
 
 # Installation and Usage
+- You must have [Bun](https://bun.sh/) installed to run this MCP server.
+
+## Usage
 
 1. `git clone` this repo
 2. Copy the absolute path to "index.ts"
