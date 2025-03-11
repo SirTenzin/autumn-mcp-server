@@ -54,3 +54,7 @@ bun run {absolute path to index.ts} --apiKey="{your api key}"
 ```
 
 You may use either your public or secret key, but some features may not be accessible using the public key.
+
+## Showcase:
+
+![Claude finding a customer](https://i.imgur.com/KgT57L8.png)
