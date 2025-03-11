@@ -57,6 +57,8 @@ You may use either your public or secret key, but some features may not be acces
 
 ## Showcase:
 
-![Claude finding a customer](https://i.imgur.com/KgT57L8.png)
+![Claude finding a customer](https://i.imgur.com/lvTMJ2m.png)
 
-![Claude finding an invoice](https://i.imgur.com/MPF8RyM.png)
+![Claude finding an invoice](https://i.imgur.com/z41HOwH.png)
+
+![Claude creating a billing portal](https://i.imgur.com/vjn3c2J.png)
