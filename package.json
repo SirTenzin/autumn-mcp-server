@@ -1,0 +1,16 @@
+{
+  "name": "autumn-mcp-server",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "express": "^4.21.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@better-fetch/fetch": "^1.1.15",
+    "@modelcontextprotocol/sdk": "^1.7.0"
+  }
+}
