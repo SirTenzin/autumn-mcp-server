@@ -6,7 +6,7 @@ import tools from "./tools/index";
 
 const server = new McpServer({
 	name: "AutumnMCP",
-	version: "1.0.0",
+	version: "1.1.0",
 });
 
 Object.keys(tools).forEach((toolName) => {
