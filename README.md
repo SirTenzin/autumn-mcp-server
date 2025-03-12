@@ -39,7 +39,7 @@ To install Autumn MCP Server for Claude Desktop automatically via [Smithery](htt
 npx -y @smithery/cli install @SirTenzin/autumn-mcp-server --client claude
 ```
 
-It also works for: [Cursor, Windsurf, Witsy, Enconvo, Goose, SpinAI](https://smithery.ai/server/@SirTenzin/autumn-mcp-server).
+It also works for: [Cursor, Windsurf, Witsy, Enconvo, Goose and SpinAI](https://smithery.ai/server/@SirTenzin/autumn-mcp-server).
 
 ### Manual without Smithery
 
