@@ -58,7 +58,9 @@ curl --request POST \
 }));
 
 server.resource("autumn_api_reference", "autumn://openapi.json", async (uri: any) => {
-	const { data, error } = await betterFetch("https://raw.githubusercontent.com/useautumn/docs/refs/heads/main/api-reference/openapi.json");
+	const { data, error } = await betterFetch("https://raw.githubusercontent.com/useautumn/docs/refs/heads/main/api-reference/openapi.json", {
+		cache: "force-cache",
+	});
 	if (error) {
 		return {
 			isError: true,
