@@ -1,5 +1,7 @@
 # Autumn MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@SirTenzin/autumn-mcp-server)](https://smithery.ai/server/@SirTenzin/autumn-mcp-server)
+
 This is an unofficial MCP server for [Autumn](https://useautumn.com). It provides an easy interface to access the Autumn pricing API to manage your customers.
 
 # Tools
@@ -25,6 +27,15 @@ This is an unofficial MCP server for [Autumn](https://useautumn.com). It provide
 - [ ] AI Builder Prompt (Lovable, Bolt.new, v0 etc...)
 
 # Installation and Usage
+
+### Installing via Smithery
+
+To install Autumn MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@SirTenzin/autumn-mcp-server):
+
+```bash
+npx -y @smithery/cli install @SirTenzin/autumn-mcp-server --client claude
+```
+
 - You must have [Bun](https://bun.sh/) installed to run this MCP server.
 
 ## Usage
