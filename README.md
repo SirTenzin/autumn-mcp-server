@@ -41,7 +41,9 @@ npx -y @smithery/cli install @SirTenzin/autumn-mcp-server --client claude
 
 It also works for: [Cursor, Windsurf, Witsy, Enconvo, Goose, SpinAI](https://smithery.ai/server/@SirTenzin/autumn-mcp-server).
 
-### Manual
+### Manual without Smithery
+
+Its much easier to visit the above Smithery link and just copy the correct command, but if you are more daring, here's the manual steps:
 
 - Claude:
 
