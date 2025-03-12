@@ -85,3 +85,7 @@ You may use either your public or secret key, but some features may not be acces
 ![Claude finding an invoice](https://i.imgur.com/z41HOwH.png)
 
 ![Claude creating a billing portal](https://i.imgur.com/gbzuWpR.png)
+
+![Claude reading the OpenAPI.json](https://i.imgur.com/DbSmNPv.png)
+
+![Claude understanding the response schema from the OpenAPI.json](https://i.imgur.com/ANuUcDs.png)
