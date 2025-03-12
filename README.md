@@ -24,7 +24,7 @@ This is an unofficial MCP server for [Autumn](https://useautumn.com). It provide
 
 # Prompts
 
-- [ ] AI Builder Prompt (Lovable, Bolt.new, v0 etc...)
+- [x] AI Builder Prompt (Lovable, Bolt.new, v0 etc...)
 
 # Installation and Usage
 
