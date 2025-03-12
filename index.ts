@@ -2,11 +2,12 @@ import {
 	McpServer,
 } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { betterFetch } from "@better-fetch/fetch";
 import tools from "./tools/index";
 
 const server = new McpServer({
 	name: "AutumnMCP",
-	version: "1.2.0",
+	version: "1.2.1",
 });
 
 Object.keys(tools).forEach((toolName) => {
@@ -55,6 +56,21 @@ curl --request POST \
 		},
 	]
 }));
+
+server.resource("autumn_api_reference", "autumn://openapi.json", async (uri: any) => {
+	const { data, error } = await betterFetch("https://raw.githubusercontent.com/useautumn/docs/refs/heads/main/api-reference/openapi.json");
+	if (error) {
+		return {
+			isError: true,
+			contents: [{ uri: uri.href, text: JSON.stringify(error, null, 4) }],
+		};
+	} else return {
+		contents: [{
+			uri: uri.href,
+			text: JSON.stringify(data, null, 4),
+		}]
+	}
+})
 
 const transport = new StdioServerTransport();
 await server.connect(transport);

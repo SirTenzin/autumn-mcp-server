@@ -15,12 +15,15 @@ This is an unofficial MCP server for [Autumn](https://useautumn.com). It provide
 # Resources
 
 ### API Reference
-- [ ] /attach
-- [ ] /entitled
-- [ ] /events
-- [ ] /customers
-- [ ] /customers/:id
-- [ ] /customers/:id/billing_portal
+
+The MCP server has access to the OpenAPI.json specification for Autumn's API, which includes the following:
+
+- [x] /attach
+- [x] /entitled
+- [x] /events
+- [x] /customers
+- [x] /customers/:id
+- [x] /customers/:id/billing_portal
 
 # Prompts
 
