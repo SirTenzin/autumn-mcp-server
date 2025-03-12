@@ -28,7 +28,7 @@ This is an unofficial MCP server for [Autumn](https://useautumn.com). It provide
 
 # Installation and Usage
 
-### Installing via Smithery
+### Installing automatically via Smithery
 
 To install Autumn MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@SirTenzin/autumn-mcp-server):
 
@@ -36,9 +36,9 @@ To install Autumn MCP Server for Claude Desktop automatically via [Smithery](htt
 npx -y @smithery/cli install @SirTenzin/autumn-mcp-server --client claude
 ```
 
-- You must have [Bun](https://bun.sh/) installed to run this MCP server.
+### Manual
 
-## Usage
+- Claude:
 
 1. `git clone` this repo
 2. Run `bun install` in the folder to install dependencies
@@ -60,7 +60,11 @@ npx -y @smithery/cli install @SirTenzin/autumn-mcp-server --client claude
 	}
 }
 ```
-Or other apps that use commands instead:
+
+- Any other app:
+
+If you want to run manually, you must have [Bun](https://bun.sh/) installed to run this MCP server.
+Here's the command for other apps that support commands instead:
 ```bash
 bun run {absolute path to index.ts} --apiKey="{your api key}"
 ```
