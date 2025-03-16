@@ -5,23 +5,6 @@ import type {
 	GetEntitlementsResponse,
 } from "../types";
 
-function returnError(error: {
-    message?: string | undefined,
-    status: number,
-    statusText: string,
-}) {
-	return {
-		isError: true,
-		content: [{ type: "text", text: JSON.stringify(error, null, 4) }],
-	};
-}
-
-function returnBody(data: any) {
-	return {
-		content: [{ type: "text", text: JSON.stringify(data, null, 4) }],
-	};
-}
-
 export default function Autumn(apiKey: string) {
 	if (!apiKey) {
 		throw new Error("Autumn API key is required");
@@ -38,51 +21,56 @@ export default function Autumn(apiKey: string) {
 	return {
 		httpClient: $,
 		getUser: async ({ id }: { id: string }) => {
-			const { data, error } = await $<GetCustomerResponse>(
-				`/customers/${id}`
-			);
-			if (error) return returnError(error);
-			else return returnBody(data);
-			
+			return await $<GetCustomerResponse>(`/customers/${id}`);
 		},
 		getBillingPortal: async ({ id }: { id: string }) => {
-			const { data, error } = await $<BillingPortal>(
-				`/customers/:id/billing_portal`,
-				{
-					params: { id },
-				}
-			);
-			if (error) return returnError(error);
-			else return returnBody(data);
+			return await $<BillingPortal>(`/customers/:id/billing_portal`, {
+				params: { id },
+			});
 		},
-		createCustomer: async ({ id, name, email }: { id: string, name: string, email: string }) => {
+		createCustomer: async ({
+			id,
+			name,
+			email,
+		}: {
+			id: string;
+			name: string;
+			email: string;
+		}) => {
 			const { data, error } = await $("/customers", {
 				method: "POST",
 				body: JSON.stringify({ id, name, email }),
-                headers: {
-                    "content-type": "application/json"
-                }
+				headers: {
+					"content-type": "application/json",
+				},
 			});
-			if (error) returnError(error);
-			else return returnBody({
-                success: true,
-                message: "Customer created successfully",
-                customer: data
-            });
+
+			return {
+				data: {
+					success: true,
+					message: "Customer created successfully",
+					customer: data,
+				},
+				error,
+			};
 		},
-		checkEntitlement: async ({ id, feature_id }: { id: string, feature_id: string }) => {
-			const { data, error } = await $<GetEntitlementsResponse>(
+		checkEntitlement: async ({
+			id,
+			feature_id,
+		}: {
+			id: string;
+			feature_id: string;
+		}) => {
+			return await $<GetEntitlementsResponse>(
 				"/entitled",
 				{
 					method: "POST",
 					body: JSON.stringify({ customer_id: id, feature_id }),
-                    headers: {
-                        "content-type": "application/json"
-                    }
+					headers: {
+						"content-type": "application/json",
+					},
 				}
 			);
-			if (error) return returnError(error);
-			else return returnBody(data);
 		},
 	};
 }

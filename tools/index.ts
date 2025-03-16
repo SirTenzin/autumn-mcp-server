@@ -11,6 +11,28 @@ if (!AUTUMN_API_KEY) {
 
 const client = Autumn(AUTUMN_API_KEY);
 
+function returnError(error: {
+    message?: string | undefined,
+    status: number,
+    statusText: string,
+}) {
+	return {
+		isError: true,
+		content: [{ type: "text", text: JSON.stringify(error, null, 4) }],
+	};
+}
+
+function returnBody(data: any) {
+	return {
+		content: [{ type: "text", text: JSON.stringify(data, null, 4) }],
+	};
+}
+
+function parseCb({ data, error }: { data: any; error: any }) {
+	if (error) return returnError(error);
+	else return returnBody(data);
+}
+
 const tools: {
 	[key: string]: {
 		description: string;
@@ -21,7 +43,7 @@ const tools: {
 	get_autumn_user: {
 		description: "Get a user by ID",
 		schema: { id: z.string().describe("The ID of the customer to fetch") },
-		cb: client.getUser,
+		cb: async (args: any) => parseCb(await client.getUser(args)),
 	},
 	get_billing_portal: {
 		description: "Get the billing portal for a user",
@@ -32,7 +54,7 @@ const tools: {
 					"The ID of the customer to fetch the billing portal for"
 				),
 		},
-		cb: client.getBillingPortal,
+		cb: async (args: any) => parseCb(await client.getBillingPortal(args)),
 	},
 	create_customer: {
 		description: "Create a new customer",
@@ -41,7 +63,7 @@ const tools: {
 			name: z.string().describe("The name of the customer to create"),
 			email: z.string().describe("The email of the customer to create"),
 		},
-		cb: client.createCustomer,
+		cb: async (args: any) => parseCb(await client.createCustomer(args)),
 	},
 	get_entitlement: {
 		description: "Get a specific entitlement set for a user",
@@ -57,7 +79,7 @@ const tools: {
 					"The ID of the feature to fetch the entitlements status for"
 				),
 		},
-		cb: client.checkEntitlement,
+		cb: async (args: any) => parseCb(await client.checkEntitlement(args)),
 	}
 };
 
