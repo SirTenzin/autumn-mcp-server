@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@better-fetch/fetch": "^1.1.15",
-    "@modelcontextprotocol/sdk": "^1.7.0"
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "dotenv": "^16.4.7"
   },
   "scripts": {
     "dev:inspect": "nodemon -w ts --exec \"bunx @modelcontextprotocol/inspector bun \"index.ts -w ts\"\""

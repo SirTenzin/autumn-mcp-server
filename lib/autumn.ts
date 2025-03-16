@@ -4,6 +4,7 @@ import type {
 	BillingPortal,
 	GetEntitlementsResponse,
 } from "../types";
+import type { CreateCustomerResponse } from "../types/Customer";
 
 export default function Autumn(apiKey: string) {
 	if (!apiKey) {
@@ -37,7 +38,7 @@ export default function Autumn(apiKey: string) {
 			name: string;
 			email: string;
 		}) => {
-			const { data, error } = await $("/customers", {
+			const { data, error } = await $<CreateCustomerResponse>("/customers", {
 				method: "POST",
 				body: JSON.stringify({ id, name, email }),
 				headers: {
@@ -46,11 +47,7 @@ export default function Autumn(apiKey: string) {
 			});
 
 			return {
-				data: {
-					success: true,
-					message: "Customer created successfully",
-					customer: data,
-				},
+				data,
 				error,
 			};
 		},

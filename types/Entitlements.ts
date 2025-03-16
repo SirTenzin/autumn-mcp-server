@@ -1,10 +1,16 @@
-export type Balance = {
-	feature_id: string;
-	balance: number;
-	required: number;
-};
+import { z } from "zod";
 
-export type GetEntitlementsResponse = {
-	allowed: boolean;
-	balances: Balance[];
-};
+export const BalanceSchema = z.object({
+  feature_id: z.string(),
+  balance: z.number(),
+  required: z.number(),
+});
+
+export type Balance = z.infer<typeof BalanceSchema>;
+
+export const GetEntitlementsResponseSchema = z.object({
+  allowed: z.boolean(),
+  balances: z.array(BalanceSchema),
+});
+
+export type GetEntitlementsResponse = z.infer<typeof GetEntitlementsResponseSchema>;

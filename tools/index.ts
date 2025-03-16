@@ -24,7 +24,7 @@ function returnError(error: {
 
 function returnBody(data: any) {
 	return {
-		content: [{ type: "text", text: JSON.stringify(data, null, 4) }],
+		content: [{ type: "text", text: JSON.stringify(data) }],
 	};
 }
 
